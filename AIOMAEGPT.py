@@ -1,19 +1,3 @@
-    #Add internet search funcionality
-    ##search google
-    ##return first result
-    ##read first result
-    ##return completion based off of first result contents + user input and GPT training
-
-
-    # Add long term memory (associate name of conversation with session ID for internal long term memory instead of using my own DB?
-    # Add voice funcionality (speech to text & text to speech)
-    # Use gpt to create a name for convo based on convo history
-    # Create regenerate response funcionality
-    # Image functionality
-    # Lock text box that displays conversations
-    # Organize tkinter configurations into consistent code design rules
-
-
 # Import Libraries
 import openai
 import gpt as gpt
