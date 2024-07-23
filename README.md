@@ -11,3 +11,6 @@
 Place a "**config.py**" file in the root directory of the project containing the string:
 
 **API_KEY = 'Your API Key'**
+
+
+Currently a local **MongoDB** instance **(i.e. mongodb://localhost:27017)** is required for proper functionality and recall.
