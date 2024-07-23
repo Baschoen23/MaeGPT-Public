@@ -3,18 +3,6 @@ from concurrent.futures import ThreadPoolExecutor
 import config
 from config import API_KEY
 from instructions import assistantInstruct, adventureInstruct, codeBot, modelCompareInstruct
-from instructions import achillesComparisonsWithHistoryInstruct, achillesComparisonsInstruct, \
-    achillesEvaluateMemoriesInstruct, achillesFillInInstruct, achillesEvaluate, achillesEnterprisePrompts
-from instructions import berylliumCompareInstruct, berylliumCompareInstructUpdate
-from instructions import siaInstruct, siaPlus5Instruct, siaCodingMultiTurnInstruct, siaEvaluate3Instruct
-from instructions import aiChatbotQualInstruct
-from instructions import persephoneCompareInstruct
-from instructions import andromedaCompareInstruct
-from instructions import ravenCompareInstruct, ravenTalkToAChatbot
-from instructions import akiraInstruct
-from instructions import heraInstruct, heraInstruct7Dimension, heraInstruct10Dimension
-from instructions import cesiumInstruct
-from instructions import puffinInstruct
 from instructions import resumeInstruct
 
 
