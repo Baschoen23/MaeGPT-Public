@@ -1,3 +1,6 @@
+#DEPRACATED
+
+
 # Import Libraries
 import openai
 import gpt as gpt
