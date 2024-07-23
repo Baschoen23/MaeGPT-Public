@@ -2,7 +2,7 @@ from openai import OpenAI
 from concurrent.futures import ThreadPoolExecutor
 import config
 from config import API_KEY
-from instructions import assistantInstruct, adventureInstruct, codeBot, modelCompareInstruct
+from instructions import assistantInstruct, codeBot
 from instructions import resumeInstruct
 
 
