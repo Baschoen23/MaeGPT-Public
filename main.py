@@ -42,7 +42,7 @@ try:
     #from testingChatResponses import save_instructions_handler, save_text_to_file
     #from nameGeneratorCompletionDavinci import generate_name
 
-    class YourClass(QObject):
+    class signalClass(QObject):
         update_word_signal = pyqtSignal(str)
 
         def __init__(self):
