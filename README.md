@@ -13,4 +13,4 @@ Place your OpenAI API key in the "**config.py**" file in the root directory of t
 **API_KEY = 'Your API Key'**
 
 __________________________________________________
-Currently a local **MongoDB** instance **(i.e. mongodb://localhost:27017)** is required for proper functionality and recall.
+Currently a local **MongoDB** instance **(i.e. mongodb://localhost:27017)** is required for proper functionality and recall within a session.
