@@ -192,8 +192,8 @@ try:
 
             self.executor = ThreadPoolExecutor(max_workers=1)
 
-            self.myWindow = myWindow()
-            self.setCentralWidget(self.myWindow)
+            self.displayWindow = displayWindow()
+            self.setCentralWidget(self.displayWindow)
             self.setGeometry(300, 100, 800, 700)
             self.mainToolbar = QToolBar("Main Toolbar")
             self.addToolBar(Qt.LeftToolBarArea, self.mainToolbar)
@@ -300,8 +300,8 @@ try:
             print('Save_conversation called')
             with open(str(datetime.datetime.now().strftime("%Y-%m-%d_[%H;%M;%Ss]-")) + 'MaeGPT-' + str(random.randint(1, 10000)) + ".txt",'w') as file:
                 print('File Opened')
-                file.write(self.myWindow.conversationBox.toPlainText())
-                html_content = self.myWindow.linkBox.toHtml()
+                file.write(self.displayWindow.conversationBox.toPlainText())
+                html_content = self.displayWindow.linkBox.toHtml()
                 file.write('\n' + 'Links:' + '\n')
                 soup = BeautifulSoup(html_content, 'html.parser')
                 for a in soup.find_all('a', href=True):
@@ -310,15 +310,15 @@ try:
                 print('File Written')
 
         def clear_conversation(self):
-            self.myWindow.conversationBox.clear()
+            self.displayWindow.conversationBox.clear()
             increment_conversation_count()
 
         def handle_links_button(self):
             if self.linkButtonFlipper == 0:
-                self.myWindow.linkBox.show()
+                self.displayWindow.linkBox.show()
                 self.linkButtonFlipper = 1
             else:
-                self.myWindow.linkBox.hide()
+                self.displayWindow.linkBox.hide()
                 self.linkButtonFlipper = 0
 
         def handle_aio_gpt_button(self):
@@ -335,27 +335,27 @@ try:
                     with open('config.py', 'w') as config_file:
                         config_file.write(f"API_KEY = '{api_key}'")
             except Exception as e:
-                self.myWindow.conversationBox.append('Please set your API Key')
+                self.displayWindow.conversationBox.append('Please set your API Key')
 
         def handle_history_button(self):
             if self.linkButtonFlipper == 0:
-                self.myWindow.historyBox.clear()
+                self.displayWindow.historyBox.clear()
                 for name in get_names_from_db():
-                    self.myWindow.historyBox.append(name + "\n")
-                    self.myWindow.historyBox.append("________________\n")
-                self.myWindow.historyBox.show()
+                    self.displayWindow.historyBox.append(name + "\n")
+                    self.displayWindow.historyBox.append("________________\n")
+                self.displayWindow.historyBox.show()
                 self.linkButtonFlipper = 1
             else:
-                self.myWindow.historyBox.hide()
+                self.displayWindow.historyBox.hide()
                 self.linkButtonFlipper = 0
 
         def handle_new_session_button(self):
-            self.myWindow.conversationBox.clear()
+            self.displayWindow.conversationBox.clear()
 
 
 
 
-    class myWindow(QWidget):
+    class displayWindow(QWidget):
         def __init__(self):
             super().__init__()
             self.initUI()
@@ -785,5 +785,5 @@ try:
 except Exception as e:
     asyncio.run(main())
     print("Error: " + str(e))
-    #mainWindow.myWindow.conversationBox.append("An error occurred: " + str(e) + "\n_______________________________\n")
+    #mainWindow.displayWindow.conversationBox.append("An error occurred: " + str(e) + "\n_______________________________\n")
     pass
